@@ -37,11 +37,9 @@ def type_of_decay(left_element, right_element):
 
     atomic_difference = atomic_number_left - atomic_number_right
     mass_difference = int(mass_number_left) - int(mass_number_right)
-    decay_number = str(mass_difference) + ", " + str(atomic_difference)
+    decay_number = f"{str(mass_difference)}, {str(atomic_difference)}"
 
-    for x in particles:
-        if x == decay_number:
-            print(particles[x])
+    print(particles[decay_number])
 
 def daughter_nuclide(left_element, particle):
     """
@@ -65,7 +63,7 @@ def daughter_nuclide(left_element, particle):
 
     mass_number_dn = int(mass_number_left) - int(mass_number_particle)
     atomic_number_dn = atomic_number_left - int(atomic_number_particle)
-    print(periodic_table[atomic_number_dn] + "-" + str(mass_number_dn))
+    print(f"{periodic_table[atomic_number_dn]}-{str(mass_number_dn)}")
 
 # Should print 'proton' and 'C-9' respectively.
 type_of_decay('S-26', 'P-25')
